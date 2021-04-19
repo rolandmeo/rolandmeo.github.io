@@ -14,4 +14,4 @@ jobs:
         github_access_token: ${{ secrets.ACCESS_TOKEN }}
         base_href: https://rolandmeo.github.io/
         deploy_branch: gh-pages
-        angular_dist_build_folder: docs
+        angular_dist_build_folder: dist/rolandmeo
