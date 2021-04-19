@@ -12,7 +12,6 @@ jobs:
       uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
       with:
         github_access_token: ${{ secrets.ACCESS_TOKEN }}
-        build_configuration: staging
         base_href: https://rolandmeo.github.io/
         deploy_branch: gh-pages
         angular_dist_build_folder: dist/my-project
