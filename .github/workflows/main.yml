@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: All things Angular 🚀
