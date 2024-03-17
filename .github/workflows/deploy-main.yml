@@ -13,5 +13,5 @@ jobs:
         with:
           github_access_token: ${{ secrets.ACCESS_TOKEN }}
           deploy_branch: gh-pages
-          angular_dist_build_folder: dist/rolandmeo
+          angular_dist_build_folder: ./
           build_configuration: production
