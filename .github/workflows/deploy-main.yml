@@ -22,4 +22,4 @@ jobs:
           access_token: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
           folder: dist/rolandmeo.github.io
-          build_script: npm install && npm run build -- --prod
+          build_script: npm install && npm run build -- --prod --output-path docs
