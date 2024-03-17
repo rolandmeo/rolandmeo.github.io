@@ -12,7 +12,14 @@ export class PlateselectionComponent {
     @Output()
     public readonly addPlate: EventEmitter<Plate> = new EventEmitter<Plate>();
 
+    @Output()
+    public readonly resetPlates: EventEmitter<void> = new EventEmitter<void>();
+
     add(plate: Plate) {
         this.addPlate.emit(plate);
+    }
+
+    reset() {
+        this.resetPlates.emit();
     }
 }

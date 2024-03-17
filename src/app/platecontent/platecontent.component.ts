@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {PlateselectionComponent} from '../plateselection/plateselection.component';
-import {Plate} from '../model/plate.model';
+import {defaultPlates, Plate} from '../model/plate.model';
 import {MatChipGrid, MatChipRow} from '@angular/material/chips';
 import {MatIcon} from '@angular/material/icon';
 
@@ -17,12 +17,7 @@ import {MatIcon} from '@angular/material/icon';
     styleUrl: './platecontent.component.scss'
 })
 export class PlatecontentComponent {
-    plates: Plate[] = [
-        {color: 'RED', weight: 25},
-        {color: 'BLUE', weight: 20},
-        {color: 'YELLOW', weight: 15},
-        {color: 'GREEN', weight: 10},
-    ];
+    plates: Plate[] = defaultPlates();
 
     addPlate(plate: Plate) {
         this.plates = [...this.plates, plate];
@@ -31,4 +26,9 @@ export class PlatecontentComponent {
     remove(plate: Plate) {
         this.plates = [...this.plates.filter(p => plate.weight !== p.weight && plate.color !== p.color)];
     }
+
+    reset() {
+        this.plates = [...defaultPlates()];
+    }
 }
+
