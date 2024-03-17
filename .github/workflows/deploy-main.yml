@@ -13,7 +13,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm ci
-          npm run build
+          npm run build --output-path=docs
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
@@ -22,4 +22,4 @@ jobs:
           access_token: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
           folder: dist/rolandmeo.github.io
-          build_script: npm install && npm run build -- --prod --output-path docs
+          build_script: npm install && npm run build -- --prod --output-path=docs
