@@ -7,11 +7,11 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: All things Angular 🚀
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
-      with:
-        github_access_token: ${{ secrets.ACCESS_TOKEN }}
-        deploy_branch: gh-pages
-        angular_dist_build_folder: dist/rolandmeo
-        build_configuration: production
+      - uses: actions/checkout@v4.1.1
+      - name: All things Angular 🚀
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
+        with:
+          github_access_token: ${{ secrets.ACCESS_TOKEN }}
+          deploy_branch: gh-pages
+          angular_dist_build_folder: dist/rolandmeo
+          build_configuration: production
