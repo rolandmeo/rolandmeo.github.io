@@ -20,5 +20,5 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
-          folder: ./
+          folder: dist/rolandmeo.github.io
           build_script: npm install && npm run build -- --prod
