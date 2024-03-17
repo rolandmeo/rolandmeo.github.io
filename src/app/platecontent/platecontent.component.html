@@ -1,0 +1,12 @@
+<plateselection (addPlate)="addPlate($event)">
+</plateselection>
+<mat-chip-grid #chipGrid aria-label="Available plates">
+    @for (plate of plates; track plate) {
+        <mat-chip-row (removed)="remove(plate)">
+            {{ plate.weight }}
+            <button matChipRemove [attr.aria-label]="'remove ' + plate.weight">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </mat-chip-row>
+    }
+</mat-chip-grid>
