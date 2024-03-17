@@ -21,6 +21,5 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           access_token: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
-          folder: dist/rolandmeo.github.io
+          folder: dist/rolandmeo.github.io/browser
           target-folder: docs
-          build_script: npm install && ng build -- --configuration "production" --output-path=docs
