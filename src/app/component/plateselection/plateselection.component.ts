@@ -1,10 +1,13 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {Plate} from '../model/plate.model';
+import {plate, Plate} from '../../model/plate.model';
+import {MatButton} from '@angular/material/button';
 
 @Component({
     selector: 'plateselection',
     standalone: true,
-    imports: [],
+    imports: [
+        MatButton
+    ],
     templateUrl: './plateselection.component.html',
     styleUrl: './plateselection.component.scss'
 })
@@ -22,4 +25,6 @@ export class PlateselectionComponent {
     reset() {
         this.resetPlates.emit();
     }
+
+    protected readonly plate = plate;
 }

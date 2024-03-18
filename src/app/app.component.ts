@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {PlateselectionComponent} from './plateselection/plateselection.component';
-import {PlatecontentComponent} from './platecontent/platecontent.component';
+import {PlateselectionComponent} from './component/plateselection/plateselection.component';
+import {PlatecontentComponent} from './component/platecontent/platecontent.component';
 
 @Component({
     selector: 'app-root',

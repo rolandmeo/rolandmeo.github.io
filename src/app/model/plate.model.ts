@@ -1,15 +1,32 @@
 export interface Plate {
     weight: number;
     color: COLOR;
+    id: string; // some random string
 }
 
-export type COLOR = 'RED' | 'BLUE' | 'YELLOW' | 'GREEN' | 'BLACK';
+export function plate(color: COLOR, weight: number): Plate {
+    return {weight, color, id: `${new Date().getTime()}-${Math.random()}`}
+}
+
+export type COLOR = 'red' | 'blue' | 'yellow' | 'green' | 'black';
 
 export function defaultPlates(): Plate[] {
     return [
-        {color: 'RED', weight: 25},
-        {color: 'BLUE', weight: 20},
-        {color: 'YELLOW', weight: 15},
-        {color: 'GREEN', weight: 10},
+        plate('red', 25),
+        plate('blue', 20),
+        plate('yellow', 15),
+        plate('green', 10),
     ];
+}
+
+export function comparePlate(a: Plate, b: Plate): number {
+    let weight = b.weight - a.weight;
+    if (weight === 0) {
+        return +(a.color) - +(b.color)
+    }
+    return weight;
+}
+
+export function sum(plates: Plate[]) {
+    return plates.reduce((w, p) => w + p.weight, 0);
 }
