@@ -13,8 +13,12 @@
             }
         </mat-chip-set>
     </div>
-    <weight-input (weightChanged)="weightChanged($event)"></weight-input>
-    <platedisplay [plates]="stackedPlates"></platedisplay>
+    <div>
+        <weight-input (weightChanged)="weightChanged($event)"></weight-input>
+    </div>
+    <div>
+        <platedisplay [plates]="stackedPlates"></platedisplay>
+    </div>
 </div>
 
 
