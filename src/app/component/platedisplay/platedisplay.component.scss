@@ -23,6 +23,10 @@ $barbellspace: 30%;
   width: $barbellspace;
 }
 
+.left {
+  flex-direction: row-reverse;
+}
+
 .middle {
   text-align: center;
   width: 100%;

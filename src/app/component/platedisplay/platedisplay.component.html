@@ -1,9 +1,13 @@
 <div class="container">
     <div class="left">
-        @for (plate of platesReversed; track plate.id) {
+        @for (plate of plates; track plate.id) {
             <div class="plate" [ngStyle]="{'background-color': plate.color}"></div>
         }
     </div>
-    <div class="middle"><h2>{{ sum(plates) }} + (20 for the bar)</h2></div>
-    <div class="right"></div>
+    <div class="middle"><h2> 2x{{ sum(plates) }}+20={{ 2 * sum(plates) + 20 }}</h2></div>
+    <div class="right">
+        @for (plate of plates; track plate.id) {
+            <div class="plate" [ngStyle]="{'background-color': plate.color}"></div>
+        }
+    </div>
 </div>

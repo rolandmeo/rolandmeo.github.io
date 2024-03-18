@@ -28,7 +28,7 @@ import {MatExpansionPanelActionRow} from '@angular/material/expansion';
     styleUrl: './platecontent.component.scss'
 })
 export class PlatecontentComponent implements OnInit {
-    plates: Plate[] = defaultPlates();
+    availablePlates: Plate[] = defaultPlates();
 
     desiredWeight: number = 0;
 
@@ -38,17 +38,17 @@ export class PlatecontentComponent implements OnInit {
     }
 
     addPlate(plate: Plate) {
-        this.plates = [...this.plates, plate];
+        this.availablePlates = [...this.availablePlates, plate];
         this.updateStackedPlates();
     }
 
     remove(id: string) {
-        this.plates = [...this.plates.filter(p => p.id !== id)];
+        this.availablePlates = [...this.availablePlates.filter(p => p.id !== id)];
         this.updateStackedPlates();
     }
 
     reset() {
-        this.plates = [...defaultPlates()];
+        this.availablePlates = [...defaultPlates()];
         this.updateStackedPlates();
     }
 
@@ -58,11 +58,11 @@ export class PlatecontentComponent implements OnInit {
     }
 
     updateStackedPlates() {
-        this.stackedPlates = this.service.getPlateStack(this.desiredWeight, this.plates);
+        this.stackedPlates = this.service.getPlateStack((this.desiredWeight - 20) / 2, this.availablePlates);
     }
 
     ngOnInit(): void {
-        this.stackedPlates = this.service.getPlateStack(this.desiredWeight, this.plates);
+        this.updateStackedPlates();
     }
 }
 

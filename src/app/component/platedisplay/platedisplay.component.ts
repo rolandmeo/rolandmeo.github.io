@@ -16,9 +16,5 @@ export class PlatedisplayComponent {
     @Input()
     plates: Plate[] = [];
 
-    get platesReversed(): Plate[] {
-        return [...this.plates].reverse();
-    }
-
     protected readonly sum = sum;
 }

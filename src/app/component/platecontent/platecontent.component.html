@@ -4,14 +4,15 @@
                         (resetPlates)="reset()">
         </plateselection>
     </div>
-
-    <mat-chip-set aria-label="Available plates">
-        @for (plate of plates; track plate.id) {
-            <mat-chip (click)="remove(plate.id)">
-                {{ plate.weight }}
-            </mat-chip>
-        }
-    </mat-chip-set>
+    <div class="available">
+        <mat-chip-set aria-label="Available plates">
+            @for (plate of availablePlates; track plate.id) {
+                <mat-chip (click)="remove(plate.id)">
+                    {{ plate.weight }}
+                </mat-chip>
+            }
+        </mat-chip-set>
+    </div>
     <weight-input (weightChanged)="weightChanged($event)"></weight-input>
     <platedisplay [plates]="stackedPlates"></platedisplay>
 </div>
