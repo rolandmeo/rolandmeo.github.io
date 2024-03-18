@@ -1,0 +1,9 @@
+<mat-form-field class="example-full-width">
+    <mat-label>Desired weight</mat-label>
+    <input matInput
+           placeholder="Desired weight"
+           value="0"
+           type="number"
+           [(ngModel)]="desiredWeight"
+           (ngModelChange)="emitWeight()">
+</mat-form-field>

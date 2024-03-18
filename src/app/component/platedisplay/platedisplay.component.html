@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="left">
+        @for (plate of platesReversed; track plate.id) {
+            <div class="plate" [ngStyle]="{'background-color': plate.color}"></div>
+        }
+    </div>
+    <div class="middle"></div>
+    <div class="right"></div>
+</div>
