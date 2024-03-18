@@ -4,7 +4,7 @@ $barbellspace: 39%;
   font-size: 3.5vw;
 }
 
-.container {
+.bar-container {
   height: 150px;
   width: 100%;
   display: flex;
@@ -33,4 +33,16 @@ $barbellspace: 39%;
 .middle {
   text-align: center;
   width: calc(100% - #{$barbellspace} * 2);
+}
+
+.vertical-container {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.bar-list {
+  //text-align: center;
+  align-content: center;
 }
