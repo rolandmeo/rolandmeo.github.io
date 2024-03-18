@@ -1,5 +1,8 @@
-$barbellspace: 30%;
+$barbellspace: 39%;
 
+.h2 {
+  font-size: 4vh;
+}
 
 .container {
   height: 150px;
@@ -9,16 +12,16 @@ $barbellspace: 30%;
   justify-content: space-between;
   background: linear-gradient(
                   to bottom,
-                  #fff 40%,
-                  #b5b5b5 45%,
+                  #fff 45%,
+                  #b5b5b5 45% 47%,
                   #e3e3e3 50%,
-                  #b5b5b5 55%,
-                  #fff 60% 100%,
+                  #b5b5b5 52% 55%,
+                  #fff 55% 100%,
   );
 }
 
 .left, .right {
-  display: flex; /* or inline-flex */
+  display: flex;
   height: 150px;
   width: $barbellspace;
 }
@@ -29,23 +32,5 @@ $barbellspace: 30%;
 
 .middle {
   text-align: center;
-  width: 100%;
-}
-
-.plate {
-  color: #ffffff;
-  font-family: 'Raleway', sans-serif;
-  font-size: 26px;
-  font-weight: 800;
-  text-align: center;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  border-radius: 10px;
-  border-inline-width: 5px;
-  background: #73AD21;
-  padding: 10px;
-  width: 10px;
-  height: 80%;
-  margin: 0 1px 0 1px;
-  line-height: 10px;
+  width: calc(100% - #{$barbellspace} * 2);
 }

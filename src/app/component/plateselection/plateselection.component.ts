@@ -1,12 +1,14 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {plate, Plate} from '../../model/plate.model';
-import {MatButton} from '@angular/material/button';
+import {MatButton, MatFabButton, MatMiniFabButton} from '@angular/material/button';
 
 @Component({
     selector: 'plateselection',
     standalone: true,
     imports: [
-        MatButton
+        MatButton,
+        MatFabButton,
+        MatMiniFabButton
     ],
     templateUrl: './plateselection.component.html',
     styleUrl: './plateselection.component.scss'
