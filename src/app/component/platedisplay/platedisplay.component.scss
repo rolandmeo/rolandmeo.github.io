@@ -9,11 +9,11 @@ $barbellspace: 30%;
   justify-content: space-between;
   background: linear-gradient(
                   to bottom,
-                  rgba(0, 0, 0, 0) 40%,
-                  rgb(52, 52, 52) 45%,
-                  rgb(148, 146, 146) calc(45% + 5px) calc(55% - 5px),
-                  rgb(52, 52, 52) 55%,
-                  rgba(0, 0, 0, 0) 60% 100%,
+                  #fff 40%,
+                  #b5b5b5 45%,
+                  #e3e3e3 50%,
+                  #b5b5b5 55%,
+                  #fff 60% 100%,
   );
 }
 
