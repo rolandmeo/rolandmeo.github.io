@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Plate} from '../../model/plate.model';
+import {Plate, sum} from '../../model/plate.model';
 import {NgForOf, NgStyle} from '@angular/common';
 
 @Component({
@@ -20,4 +20,5 @@ export class PlatedisplayComponent {
         return [...this.plates].reverse();
     }
 
+    protected readonly sum = sum;
 }

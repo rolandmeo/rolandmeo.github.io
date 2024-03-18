@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {comparePlate, Plate} from '../model/plate.model';
+import {comparePlate, Plate, sum} from '../model/plate.model';
 
 @Injectable({
     providedIn: 'root'
@@ -7,7 +7,12 @@ import {comparePlate, Plate} from '../model/plate.model';
 export class PlatestackingService {
 
     getPlateStack(desiredWeight: number, plates: Plate[]): Plate[] {
-        plates.sort(comparePlate);
-        return plates.sort(comparePlate);
+        return plates.sort(comparePlate).reduce((ps, p) => {
+            let intermediateSum = sum(ps);
+            if ((intermediateSum + p.weight) <= desiredWeight) {
+                return [...ps, p]
+            }
+            return ps;
+        }, [] as Plate[]);
     }
 }
