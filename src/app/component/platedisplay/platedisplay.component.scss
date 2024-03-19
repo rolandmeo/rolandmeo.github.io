@@ -2,16 +2,18 @@ $barbellspace: 39%;
 
 .h2 {
   font-size: 3.5vw;
+  margin: 0 !important;
 }
 
 @media screen and (min-width: 700px) {
   .h2 {
     font-size: 30px !important;
+    margin: 0 !important;
   }
 }
 
 .bar-container {
-  margin-bottom: 3.6em;
+  margin-bottom: 1.2em;
   height: 150px;
   width: 100%;
   display: flex;
