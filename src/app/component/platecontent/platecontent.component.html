@@ -17,7 +17,8 @@
         <weight-input (weightChanged)="weightChanged($event)"></weight-input>
     </div>
     <div>
-        <platedisplay [plates]="stackedPlates"></platedisplay>
+        <platedisplay [plates]="stackedPlates"
+                      [desiredWeight]="desiredWeight"></platedisplay>
     </div>
 </div>
 

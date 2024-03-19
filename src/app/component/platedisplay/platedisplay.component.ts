@@ -1,20 +1,26 @@
 import {Component, Input} from '@angular/core';
 import {Plate, sum} from '../../model/plate.model';
-import {NgForOf, NgStyle} from '@angular/common';
+import {NgForOf, NgIf, NgStyle} from '@angular/common';
 
 @Component({
     selector: 'platedisplay',
     standalone: true,
     imports: [
         NgForOf,
-        NgStyle
+        NgStyle,
+        NgIf
     ],
     templateUrl: './platedisplay.component.html',
     styleUrl: './platedisplay.component.scss'
 })
 export class PlatedisplayComponent {
+
+    readonly BAR_WEIGHT = 20;
     @Input()
     plates: Plate[] = [];
+
+    @Input()
+    desiredWeight: number = 0;
 
     protected readonly sum = sum;
 
@@ -32,9 +38,16 @@ export class PlatedisplayComponent {
             'border-inline-width': '5px',
             padding: '2px',
             width: '10px',
-            //height: '80%',
             margin: '0 1px 0 1px',
             'line-height': '10px',
         };
+    }
+
+    get weightReached(): boolean {
+        return this.calculated >= this.desiredWeight
+    }
+
+    get calculated(): number {
+        return sum(this.plates) * 2 + this.BAR_WEIGHT
     }
 }

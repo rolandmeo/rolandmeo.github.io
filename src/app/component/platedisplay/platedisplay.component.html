@@ -5,7 +5,16 @@
                 <div [ngStyle]="plateStyle(plate)">{{ plate.weight }}</div>
             }
         </div>
-        <div class="middle"><h2 class="h2"> 2x{{ sum(plates) }}+20<br>={{ 2 * sum(plates) + 20 }}</h2></div>
+        <div class="middle">
+            <div class="middle-top">
+                <h2 class="h2">2x{{ sum(plates) }}+{{ BAR_WEIGHT }}<br>={{ calculated }} {{ weightReached ? '✅' : '❌' }}</h2>
+            </div>
+            <div class="middle-center"></div>
+            <div class="middle-bottom">
+                <h2 class="h2" *ngIf="!weightReached">missing<br>{{ desiredWeight - calculated }}</h2>
+            </div>
+
+        </div>
         <div class="right">
             @for (plate of plates; track plate.id) {
                 <div [ngStyle]="plateStyle(plate)">{{ plate.weight }}</div>
