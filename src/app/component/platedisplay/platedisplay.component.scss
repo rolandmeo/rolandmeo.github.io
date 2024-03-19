@@ -11,6 +11,7 @@ $barbellspace: 39%;
 }
 
 .bar-container {
+  margin-bottom: 3.6em;
   height: 150px;
   width: 100%;
   display: flex;
@@ -62,6 +63,28 @@ $barbellspace: 39%;
 }
 
 .bar-list {
-  //text-align: center;
+  width: 100%;
+  display: flex;
+  flex: 0 auto;
+  align-items: center;
   align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.li-line {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2.5em;
+  height: 1.2em;
+}
+
+.weight-per-end {
+  height: 1.2em;
+}
+
+.plate-amount {
+  font-weight: bold;
+  text-transform: uppercase;
 }

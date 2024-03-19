@@ -24,7 +24,7 @@ export class PlatedisplayComponent {
 
     protected readonly sum = sum;
 
-    plateStyle(plate: Plate) {
+    verticalPlateStyle(plate: Plate) {
         return {
             color: '#fff',
             'background-image': `linear-gradient(to right, ${plate.color} 10%, oklch(from ${plate.color} calc(l * 1.25) c h) 50%, ${plate.color} 90%)`,
@@ -43,11 +43,25 @@ export class PlatedisplayComponent {
         };
     }
 
+    horizontalPlateStyle(plate: Plate) {
+        return {...this.verticalPlateStyle(plate), transform: `rotate(-90deg)`, height: '5em'}
+    }
+
     get weightReached(): boolean {
         return this.calculated >= this.desiredWeight
     }
 
     get calculated(): number {
         return sum(this.plates) * 2 + this.BAR_WEIGHT
+    }
+
+    summarize(): { plate: Plate, amount: number }[] {
+        return this.plates.reduce((sum, p) => {
+            let find = sum.find(s => s.plate.weight === p.weight);
+            if (find) {
+                return [...sum.filter(s => s.plate.weight != find?.plate.weight), {...find, amount: find.amount + 1}];
+            }
+            return [...sum, {amount: 1, plate: p}];
+        }, [] as { plate: Plate, amount: number }[])
     }
 }

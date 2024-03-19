@@ -2,7 +2,7 @@
     <div class="bar-container">
         <div class="left">
             @for (plate of plates; track plate.id) {
-                <div [ngStyle]="plateStyle(plate)">{{ plate.weight }}</div>
+                <div [ngStyle]="verticalPlateStyle(plate)">{{ plate.weight }}</div>
             }
         </div>
         <div class="middle">
@@ -17,15 +17,19 @@
         </div>
         <div class="right">
             @for (plate of plates; track plate.id) {
-                <div [ngStyle]="plateStyle(plate)">{{ plate.weight }}</div>
+                <div [ngStyle]="verticalPlateStyle(plate)">{{ plate.weight }}</div>
             }
         </div>
     </div>
     <div class="bar-list">
-        <!--
-        <ul>
-            <li>2x 25</li>
-        </ul>
-        -->
+        <div class="weight-per-end" *ngIf="plates.length > 0">
+            <h2 class="h2"> weights per end</h2>
+        </div>
+        @for (plateSum of summarize(); track plateSum.plate.weight) {
+            <div class="li-line">
+                <div class="plate-amount">{{ plateSum.amount }}x</div>
+                <div [ngStyle]="horizontalPlateStyle(plateSum.plate)">{{ plateSum.plate.weight }}</div>
+            </div>
+        }
     </div>
 </div>
